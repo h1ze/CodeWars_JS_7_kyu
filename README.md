@@ -1,0 +1,1 @@
+# CodeWars_JS_7_kyu
