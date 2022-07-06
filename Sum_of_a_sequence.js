@@ -9,10 +9,27 @@ const sequenceSum = (begin, end, step) => {
   if (begin === end) {
     return begin;
   }
-  for (let i = begin; i <= end; i + step) {
-    result += i;
+  if (begin > end) {
+    return 0;
+  }
+  while (begin <= end) {
+    result += begin;
+    begin += step;
   }
   return result;
 };
 
-console.log(sequenceSum(2, 2, 2));
+console.log(sequenceSum(1, 5, 3));
+
+const sequenceSum2 = (begin, end, step) => {
+  let result = Math.floor((end - begin) / step);
+  if (begin === end) {
+    return begin;
+  }
+  if (begin > end) {
+    return 0;
+  }
+  return Math.floor(begin * (result + 1) + step * result * ((result + 1) / 2));
+};
+
+console.log(sequenceSum2(1, 5, 3));
